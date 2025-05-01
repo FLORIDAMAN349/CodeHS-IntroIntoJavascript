@@ -1,3 +1,39 @@
+/*There are two versions to this code, the first one should work. Please use the second code chunk provided if it does not meet all the requirements.*/
+let turn = 0;
+let number = 1;
+let color = Randomizer.nextColor();
+
+function start() {
+    setTimer(doTurn, 1000);
+}
+
+function doTurn() {
+    if (turn == 0) {
+        for (let i = 0; i < number; i++) {
+        let shape = new Circle(25);
+        shape.setColor(color);
+        shape.setPosition(Randomizer.nextInt(0, getWidth()), Randomizer.nextInt(0, getHeight()));
+        add(shape);
+    }
+    } else {
+        for (let i = 0; i < number; i++) {
+        let shape = new Rectangle(50, 50);
+        shape.setColor(color);
+        shape.setPosition(Randomizer.nextInt(0, getWidth()), Randomizer.nextInt(0, getHeight()));
+        add(shape);
+    }
+}
+turn = Math.abs(turn - 1);
+number *= 2;
+color = Randomizer.nextColor();
+}
+
+
+
+
+/*THIS IS THE SECOND CODE SEGMENT*/
+
+/* <-- REMOVE THIS LINE TO USE THE CODE
 //NOTE: I don't know why it says "Maximum call stack size exceeded..."
 
 //global vars
@@ -50,3 +86,4 @@ function drawSquare(length,width,x,y,color){
     yes.setColor(Randomizer.nextColor());
     add(yes);
 }
+DELETE THIS LINE TO USE THE CODE*/ 
